@@ -31,8 +31,7 @@ def retrieve():
 def create():
 
     data = request.get_json()
-    teste = type(data["nome"]).__name__
-    print(teste)
+   
     if (type(data["nome"]) != str) or (type(data["email"]) != str):
 
         return {"wrong fields": [{"nome": type(data["nome"]).__name__},{"email": type(data["email"]).__name__}]}, HTTPStatus.BAD_REQUEST
